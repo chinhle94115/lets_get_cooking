@@ -1,14 +1,20 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<div class="login">
+  <div class="panel-heading">
+    <h1 class="brand-heading"> Log In </h1>
   </div>
+  <body>
+      <p>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, required: false, autofocus: true %>
+            <%= f.input :password, required: false %>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+      </p>
+  </body>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+  <div class="btn btn-lg btn-warning">
+    <%= f.button :submit, "Let's Get Started"%>
   </div>
 <% end %>
 

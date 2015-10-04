@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'recipes/index'
+
 
   devise_for :users
   get 'users/new'
@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :recipes do
     put :favorite, on: :member
   end
+
+  resources :favorite_recipes
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

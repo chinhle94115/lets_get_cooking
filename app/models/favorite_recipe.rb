@@ -11,7 +11,8 @@
 
 class FavoriteRecipe < ActiveRecord::Base
 
-  belongs_to :recipe
+  # belongs_to :recipe
   belongs_to :user
-  
+
+  validates_uniqueness_of :source_url
 end

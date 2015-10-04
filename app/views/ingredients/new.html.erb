@@ -5,7 +5,7 @@
     <body>
         <p>
           <%= simple_form_for @ingredient do |f| %>
-            <%= f.input :name, label: false, input_html: {placeholder: "Let's Get Your New Ingredient"} %>
+            <li align="right"><%= f.input :name, label: false, input_html: {placeholder: "Let's Get Your New Ingredient"} %></li>
             <%= f.submit "Submit".html_safe, class: "btn btn-lg btn-warning" %>
 
           <% end %>

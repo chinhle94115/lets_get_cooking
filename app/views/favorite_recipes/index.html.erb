@@ -1,0 +1,13 @@
+<div class="">
+  <h1 class="well"> Favorite Recipes </h1>
+
+  <div class="row">
+    <%  @favorites.each do |favorite| %>
+      <div class="col-xs-2">
+        <p> <%= link_to"#{image_tag(favorite.try(:image), class: "img-responsive")}".html_safe, favorite.try(:source_url), target: "_blank"%></p>
+        <style="color:#fff;"> <%=favorite.title %>
+
+      </div>
+      <% end %>
+
+  </div>

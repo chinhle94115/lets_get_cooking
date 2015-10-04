@@ -19,9 +19,11 @@
                     <%= link_to "    Sign In    ", user_session_path, method: :post %>
                     <% end %>
                 </li>
-
                 <li class="padding">
-                    <%= link_to "    Favorite Recipes    ", root_path %>
+                    <%= link_to "    Home    ", root_path %>
+                </li>
+                <li class="padding">
+                    <%= link_to "    Favorite Recipes    ", favorite_recipes_path %>
                 </li>
                 <li class="padding">
                     <%= link_to "    Ingredients   ", ingredients_path %>

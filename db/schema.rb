@@ -11,13 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151002234136) do
+ActiveRecord::Schema.define(version: 20151003231908) do
 
   create_table "favorite_recipes", force: :cascade do |t|
     t.integer  "recipe_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "title"
+    t.string   "ingredient"
+    t.string   "source_url"
+    t.string   "image"
+    t.string   "publisher"
+    t.string   "provider_id"
   end
 
   create_table "ingredients", force: :cascade do |t|

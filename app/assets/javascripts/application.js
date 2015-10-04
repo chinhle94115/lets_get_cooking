@@ -17,3 +17,6 @@
 //= require grayscale
 //= require turbolinks
 //= require_tree .
+//= require masonry/jquery.masonry
+//= require masonry/box-maker
+//= require masonry/jquery.loremimages.min

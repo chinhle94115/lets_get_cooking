@@ -4,15 +4,15 @@ class RecipesController < ApplicationController
       type = params[:type]
       if type == "favorite"
         current_user.favorites << @recipe
-        redirect_to :back, notice: 'You favorited #{@recipe.name}'
+        redirect_to favorite_recipes_path, notice: 'You favorited #{@recipe.name}'
 
       elsif type == "unfavorite"
         current_user.favorites.delete(@recipe)
-        redirect_to :back, notice: 'Unfavorited #{@recipe.name}'
+        redirect_to favorite_recipes_path, notice: 'Unfavorited #{@recipe.name}'
 
       else
         # Type missing, nothing happens
-        redirect_to :back, notice: 'Nothing happened.'
+        redirect_to recipes_path, notice: 'Nothing happened.'
       end
     end
 
@@ -20,7 +20,6 @@ class RecipesController < ApplicationController
     end
 
     def index
-      @recipes = Recipe.all
     end
 
     def show
@@ -28,7 +27,7 @@ class RecipesController < ApplicationController
 
     def create
       @recipes = Recipe.get_recipes(params)
-      redirect_to recipes_path
+      # redirect_to recipes_path
     end
 
     def ingredient_list

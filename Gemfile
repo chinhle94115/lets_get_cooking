@@ -22,6 +22,7 @@ gem 'font-awesome-sass', '~> 4.4.0'
 gem 'devise'
 gem 'typhoeus'
 gem 'selectize-rails'
+gem 'masonry-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
