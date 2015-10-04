@@ -45,6 +45,7 @@
         <%=recipe["title"] %>
         <button type="button" class="btn btn-warning btn-xs">
           <%=link_to "Add to Favorites", favorite_recipes_path(source_url: recipe["source_url"], image: recipe["image_url"], title: recipe["title"]), method: :post, remote: true%></button>
+
       </div>
       <% end %>
     </div>
@@ -58,6 +59,6 @@
     $('#masonry-container').masonry({
       itemSelector: '.col-xs-2'
     });
-    alert("hello guys!");
+    ;
   });
 </script>
