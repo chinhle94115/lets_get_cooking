@@ -1,13 +1,67 @@
+<div id="header-wrap">
+  <div id="header">
+    <h1>      </h1><br/>
+    <br/>
+  </div>
+</div>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <% @favorites.each_with_index do |favorite, i| %>
+    <div class="item <%= i == 0 ? "active": "" %>">
+      <p align="center">
+        <%= image_tag(favorite[:image], class: "img_responsive") %>
+      </p>
+      <div class="carousel-caption">
+        <p vertical-align="bottom"><%= favorite[:title].capitalize %></p>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+
+  <!-- Controls -->
+  <!-- <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a> -->
+</div>
+
 <div class="">
   <h1 class="well"> Favorite Recipes </h1>
 
-  <div class="row">
+  <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
+    <div class="grid">
     <%  @favorites.each do |favorite| %>
       <div class="col-xs-2">
         <p> <%= link_to"#{image_tag(favorite.try(:image), class: "img-responsive")}".html_safe, favorite.try(:source_url), target: "_blank"%></p>
         <style="color:#fff;"> <%=favorite.title %>
-
+        <%= button_to 'Delete', {controller: :favorite_recipes, :action => 'destroy', :id => favorite.id }, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-xs btn-danger' %><br/ >
       </div>
       <% end %>
-
+    </div>
   </div>
+
+
+</div>
+
+<script>
+  $(function() {
+    $('#masonry-container').masonry({
+      itemSelector: '.col-xs-2'
+    });
+    ;
+  });
+</script>

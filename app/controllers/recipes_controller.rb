@@ -30,6 +30,15 @@ class RecipesController < ApplicationController
       # redirect_to recipes_path
     end
 
+    def destroy
+
+        @favorite = FavoriteRecipe.find(params[:id])
+        @favorite.destroy
+
+        redirect_to favorite_recipes_path
+
+      end
+      
     def ingredient_list
 
     end

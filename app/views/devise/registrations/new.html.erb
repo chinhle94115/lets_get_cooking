@@ -2,7 +2,7 @@
   <div class="panel-heading">
     <h1 class="brand-heading"> Sign Up </h1>
   </div>
-  <body>
+    <div class="col-md-6 col-md-offset-3">
       <p>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
@@ -13,11 +13,12 @@
             <%= f.input :password_confirmation, required: true %>
           </div>
       </p>
-  </body>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up" %>
+    </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

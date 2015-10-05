@@ -1,3 +1,10 @@
+<div id="header-wrap">
+  <div id="header">
+    <h1>      </h1><br/>
+    <br/>
+  </div>
+</div>
+
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -22,14 +29,14 @@
   </div>
 
   <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+  <!-- <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
-  </a>
+  </a> -->
 </div>
 
 
@@ -44,7 +51,7 @@
         <p> <%= link_to"#{image_tag(recipe["image_url"], class: "img-responsive")}".html_safe, recipe["source_url"], target: "_blank"%></p>
         <%=recipe["title"] %>
         <button type="button" class="btn btn-warning btn-xs">
-          <%=link_to "Add to Favorites", favorite_recipes_path(source_url: recipe["source_url"], image: recipe["image_url"], title: recipe["title"]), method: :post, remote: true%></button>
+          <%=link_to "Add to Favorites", favorite_recipes_path(source_url: recipe["source_url"], image: recipe["image_url"], title: recipe["title"]), method: :post, remote: true%></button><br/>
 
       </div>
       <% end %>

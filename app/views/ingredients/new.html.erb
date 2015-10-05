@@ -2,7 +2,7 @@
   <div class="panel-heading">
     <h1 class="brand-heading"> New Ingredient </h1>
   </div>
-    <body>
+    <div class="col-md-6 col-md-offset-3">
         <p>
           <%= simple_form_for @ingredient do |f| %>
             <li align="right"><%= f.input :name, label: false, input_html: {placeholder: "Let's Get Your New Ingredient"} %></li>
@@ -10,5 +10,5 @@
 
           <% end %>
         </p>
-    </body>
+    </div>
   </div>
